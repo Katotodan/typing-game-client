@@ -1,0 +1,38 @@
+.welcome-container{
+    min-height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: bisque;
+    padding: 0.5rem 2rem;
+}
+.welcome-container h2{
+    text-align: center;
+    margin: 1rem 0;
+}
+.welcome-container p{
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}
+.goOnline-btn{
+    margin: 1rem 0;
+    font-size: larger;
+}
+.welcome-container .msgContainer{
+    height: 2rem;
+    width: 100%;
+}
+.welcome-container .msg{
+    color: red;
+}
+@media screen and (max-width: 600px) {
+    .welcome-container{
+        padding: 0.25rem 1rem;
+    }
+    button{
+        margin: 1rem 0;
+    }
+    .welcome-container .msgContainer{
+        height: 5rem;
+    }
+}
