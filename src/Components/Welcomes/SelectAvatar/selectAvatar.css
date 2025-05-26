@@ -28,3 +28,28 @@
     opacity: 0.4;
     font-size: larger;
 }
+
+.img-container::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  animation: pulse 1s infinite;
+}
+@keyframes pulse {
+  0%{
+    background-color: rgba(155, 144, 144, 0.2);
+  }
+  50%{
+    background-color: rgba(155, 144, 144, 0.5);
+  }
+  100%{
+    background-color: rgba(155, 144, 144, 0.2);
+  }
+}
+.loaded img{
+  opacity: 1;
+}
+.img-container.loaded::before{
+  content: none;
+  animation: none;
+}

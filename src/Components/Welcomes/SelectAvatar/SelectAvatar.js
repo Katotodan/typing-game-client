@@ -17,12 +17,12 @@ export const SelectAvatar = () =>{
        
     const images = avartarSrc.map((element, index) =>{
         return(
-            <button className="avatart-btn" key={index} onClick={() => selectImg(element.url)}>
+            <button className="avatart-btn img-container" key={index} onClick={() => selectImg(element.url)}>
                 <img src={element.url} key={index} 
-                className="avatar-img" alt="Avatar img" loading='lazy'/>
+                className="avatar-img" alt="Avatar img" loading='lazy'
+                onLoad={(e) => e.target.parentElement.classList.add("loaded")}/>
                 {currentUserImg === element.url && <span className="selected">✔</span>}
             </button>
-            
         )
     })    
     return (
