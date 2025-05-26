@@ -6,7 +6,9 @@ button{
     cursor: pointer;
     outline: 0;
 }
-input{
-    margin:  auto !important;
+input,
+select,
+textarea {
     font-size: 16px !important;
+    height: auto !important;
 }
