@@ -6,3 +6,7 @@ button{
     cursor: pointer;
     outline: 0;
 }
+input{
+    margin:  auto !important;
+    font-size: 16px !important;
+}
