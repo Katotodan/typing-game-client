@@ -1,12 +1,13 @@
 .request-page-main-container{
     width: 100%;
-    height: calc(100vh - 4rem);
+    height: calc(100dvh - 4rem);
     overflow: hidden;
     position: relative;
 }
 
 .request-container{
-    height: calc(100vh - 7rem);
+    height: calc(100dvh - 7rem);
+    max-height: calc(100vh - 7rem);
 }
 .search-btn{
     position: absolute;
@@ -18,10 +19,12 @@
 }
 @media (min-width: 768px) {
     .request-page-main-container{
-        height: calc(100vh - 5rem);
+        height: calc(100dvh - 5rem);
+        max-height: calc(100vh - 5rem);
     } 
     .request-container{
-        height: calc(100vh - 8rem);
+        height: calc(100dvh - 8rem);
+        max-height: calc(100vh - 8rem);
     }
     .search-btn{
         display: none;

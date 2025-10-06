@@ -72,7 +72,7 @@ export const SelectCompetitor = ({selectedCompetitor, display}) =>{
             <input type="text" placeholder="Search for an user" className="input-search"/>
             <div>
                 {onlineUser.length > 1 ? onlineUserList : <span className="no-user-paragraph">
-                    No user connected yet
+                    No online user yet.
                 </span>}
             </div>
         </section>
