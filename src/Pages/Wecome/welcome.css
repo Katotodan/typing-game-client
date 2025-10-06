@@ -1,7 +1,8 @@
 .welcome-container{
-    min-height: 100dvh;
+    min-height: 100vh;   /* fallback for older browsers */
+    min-height: 100dvh;  /* modern mobile browsers */
+    height: 100%; 
     width: 100vw;
-    max-height: auto;
     background-color: bisque;
     padding: 0.5rem 2rem;
 }
