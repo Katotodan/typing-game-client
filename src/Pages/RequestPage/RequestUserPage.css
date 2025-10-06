@@ -7,11 +7,10 @@
 
 .request-container{
     height: calc(100dvh - 7rem);
-    max-height: calc(100vh - 7rem);
 }
 .search-btn{
     position: absolute;
-    top: 3.25rem;
+    top: 2.5rem;
     left: 0.5rem;
     border-radius: 5px;
     cursor: pointer;
@@ -20,11 +19,9 @@
 @media (min-width: 768px) {
     .request-page-main-container{
         height: calc(100dvh - 5rem);
-        max-height: calc(100vh - 5rem);
     } 
     .request-container{
         height: calc(100dvh - 8rem);
-        max-height: calc(100vh - 8rem);
     }
     .search-btn{
         display: none;
