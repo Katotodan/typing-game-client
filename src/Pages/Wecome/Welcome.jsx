@@ -1,10 +1,11 @@
-import React, {useState, useContext} from "react";
+import React, {useState, useContext, useEffect} from "react";
 import { SelectAvatar } from "../../Components/Welcomes/SelectAvatar/SelectAvatar";
 import { UserInfo } from "../../Components/Welcomes/UserInfo/UserInfo";
 import { Navigate } from "react-router-dom";
 import { UserNameContext, ImageUrlContext } from "../../Context";
 import { socket } from "../../socket";
 import "./welcome.css"
+import axios from "axios";
 
 
 export const Welcome = () =>{
@@ -13,6 +14,20 @@ export const Welcome = () =>{
     // Context
     const {currentUser} = useContext(UserNameContext)
     const {currentUserImg} = useContext(ImageUrlContext)
+    const [isServerAwake, setIsServerAwake] = useState(false);
+
+    // Wake the server up
+    useEffect(() => {
+        axios.get(`${process.env.REACT_APP_API_URL}/wake-up`)
+          .then(response => {
+            setIsServerAwake(true);
+          })
+          .catch(error => {
+            console.error('Error waking up the server:', error);
+            setIsServerAwake(false);
+          });
+        
+    }, []);
 
     const goOnline = () =>{
         if(currentUser && currentUserImg){
@@ -46,6 +61,7 @@ export const Welcome = () =>{
             <div className="msgContainer">
                 {displayMessage && <p className="msg">Add username and select your avatar please!!!</p>}
             </div>
+            {!isServerAwake && <p className="msg">Waking up the server, please wait...</p>}
             <button type="button" onClick={goOnline} className="goOnline-btn">
                 See online combetitors
             </button>
