@@ -31,9 +31,6 @@
     .welcome-container{
         padding: 0.25rem 1rem;
     }
-    button{
-        margin: 1rem 0;
-    }
     .welcome-container .msgContainer{
         height: 7rem;
     }
