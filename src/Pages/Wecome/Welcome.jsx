@@ -29,7 +29,7 @@ export const Welcome = () =>{
         
     }, []);
 
-    const goOnline = () =>{
+    const checkUsernameAndAvatar = () =>{
         if(currentUser && currentUserImg){
             // Go online too
             socket.connect()
@@ -49,7 +49,21 @@ export const Welcome = () =>{
             setTimeout(() => {
                 setDisplayMessage(false)
             }, 2000);
-        }    
+        }
+    }
+
+    const goOnline = async () =>{
+        // Is server awake?     
+        if(!isServerAwake){
+            setDisplayMessage(true)
+            setTimeout(() => {
+                setDisplayMessage(false)
+                checkUsernameAndAvatar()
+            }, 1000);
+        }else{
+            checkUsernameAndAvatar()
+        }
+            
     }
 
     return(
@@ -60,16 +74,20 @@ export const Welcome = () =>{
             <SelectAvatar/>
             <div className="msgContainer">
                 {displayMessage && <p className="msg">
-                    {/* Are the username and avatar missing? */}
-                    {(!currentUser && !currentUserImg) ? "Add username and select your avatar please!!!"
-                    : !currentUser ? "Add username please!!!"
-                    : !currentUserImg ? "Select your avatar please!!!"
-                    : ""
-                    }
-                    
-                </p>}
-                {!isServerAwake && <p className="msg">Waking up the server, please wait...</p>}
+                    {!isServerAwake ? "Waking up the server, please wait..." :(
+                        <>
+                            {/* Are the username and avatar missing? */}
+                            {
+                                (!currentUser && !currentUserImg) ? "Add username and select your avatar please!!!"
+                                : !currentUser ? "Add username please!!!"
+                                : !currentUserImg ? "Select your avatar please!!!"
+                                : ""
+                            }
+                        </>
+                    )} 
+                </p>}   
             </div>
+            
             
             <button type="button" onClick={goOnline} className="goOnline-btn">
                 See online combetitors
