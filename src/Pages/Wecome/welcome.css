@@ -9,7 +9,7 @@
     text-align: center;
     margin: 2rem 0;
 }
-.welcome-container p{
+.welcome-container > p{
     text-align: center;
     margin: 1rem 0 1.5rem 0;
     font-size: 1.5rem;
@@ -26,6 +26,7 @@
 .welcome-container .msg{
     color: red;
     margin: 0 !important;
+    text-align: center;
 }
 @media screen and (max-width: 600px) {
     .welcome-container{
