@@ -59,9 +59,18 @@ export const Welcome = () =>{
             <UserInfo/>
             <SelectAvatar/>
             <div className="msgContainer">
-                {displayMessage && <p className="msg">Add username and select your avatar please!!!</p>}
+                {displayMessage && <p className="msg">
+                    {/* Are the username and avatar missing? */}
+                    {(!currentUser && !currentUserImg) ? "Add username and select your avatar please!!!"
+                    : !currentUser ? "Add username please!!!"
+                    : !currentUserImg ? "Select your avatar please!!!"
+                    : ""
+                    }
+                    
+                </p>}
+                {!isServerAwake && <p className="msg">Waking up the server, please wait...</p>}
             </div>
-            {!isServerAwake && <p className="msg">Waking up the server, please wait...</p>}
+            
             <button type="button" onClick={goOnline} className="goOnline-btn">
                 See online combetitors
             </button>
