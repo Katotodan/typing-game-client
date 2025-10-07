@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState, useEffect} from "react";
+import React, {useContext, useState, useEffect} from "react";
 
 import { Request } from "../../Components/Welcomes/Request/Request";
 import { SelectCompetitor } from "../../Components/Welcomes/SelectCompetitor/SelectCompetitor";
