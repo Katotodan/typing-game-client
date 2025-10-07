@@ -19,13 +19,15 @@ dialog{
     border-radius: 5px;
     cursor: pointer;
     margin: 0 !important;
+    color: black !important;
 }
 .declineBtn{
     padding: 0.5rem 1rem;
-    background-color: #ff0000;
+    background-color: #b84e4e;
     border-radius: 5px;
     cursor: pointer;
     margin: 0 !important;
+    color: black !important;
 }
 @media (min-width: 768px) {
     .title{
