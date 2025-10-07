@@ -62,12 +62,12 @@ export const RequestUserPage = () =>{
             
             <div className="request-page-main-container">
                 <div className="request-container">
-                    <SelectCompetitor selectedCompetitor = {selectedCompetitor} display={showOnlineUser}/>
+                    {/* <SelectCompetitor selectedCompetitor = {selectedCompetitor} display={showOnlineUser}/>
                     <Request competitor = {competitor} display={showWelcomingMsg} 
                     isRequestSent={isRequestSent} displayWecomingMsg ={displayWecomingMsg} 
-                    noCompetitorResponded = {enableAnotherRequest}/>
+                    noCompetitorResponded = {enableAnotherRequest}/> */}
                 </div>
-                {/* <SendRequest competitor={competitor} sendRequestFnc={sendRequestFnc}/> */}
+                <SendRequest competitor={competitor} sendRequestFnc={sendRequestFnc}/>
             </div>
             
             {navigateUser && <Navigate to="/"/>}
