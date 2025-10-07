@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useContext, useEffect, useState, useEffect} from "react";
 
 import { Request } from "../../Components/Welcomes/Request/Request";
 import { SelectCompetitor } from "../../Components/Welcomes/SelectCompetitor/SelectCompetitor";
@@ -8,6 +8,7 @@ import { Navigate } from "react-router-dom";
 import "./RequestUserPage.css"
 import { Search, X } from "lucide-react";
 import { SendRequest } from "../../Components/Welcomes/SendRequest/SendRequest";
+import { socket } from "../../socket";
 
 
 export const RequestUserPage = () =>{
@@ -32,6 +33,25 @@ export const RequestUserPage = () =>{
         setIsRequestSent(false)
         setAllCompetitors([])
     }, [])
+    const displayWecomingMsg = () =>{
+        setShowOnlineUser(false)
+        setShowWelcomingMsg(true)
+    }
+    // On call, if small screen always display the welcoming message
+    useEffect(() =>{
+        const onCall = () =>{
+            if(window.innerWidth < 768){
+                displayWecomingMsg()
+            }
+        }
+        
+        socket.on("call", onCall)
+
+        return () =>{
+            socket.off("call", onCall)  
+        }
+    }, [])   
+    
 
     const selectedCompetitor = (competitors) =>{
         setCompetitor(competitors)
@@ -46,11 +66,6 @@ export const RequestUserPage = () =>{
     }
     const enableAnotherRequest = (status) =>{
         setIsRequestSent(status)
-    }
-    
-    const displayWecomingMsg = () =>{
-        setShowOnlineUser(false)
-        setShowWelcomingMsg(true)
     }
 
     return(
