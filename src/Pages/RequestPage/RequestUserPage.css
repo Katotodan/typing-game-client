@@ -2,8 +2,6 @@
     width: 100%;
     height: calc(100dvh - 4rem);
     position: relative;
-    background-color: blue;
-    margin-bottom: 0 !important;
 }
 
 .request-container{
