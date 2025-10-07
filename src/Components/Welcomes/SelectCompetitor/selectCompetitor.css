@@ -4,6 +4,7 @@
     overflow-x: hidden;
     overflow-y: auto;
     padding: 0.5rem;
+    display: none;
 }
 .non-active{
     display: none;
