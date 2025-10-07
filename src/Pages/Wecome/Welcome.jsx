@@ -1,4 +1,4 @@
-import React, {useState, useContext, useEffect} from "react";
+import {useState, useContext, useEffect} from "react";
 import { SelectAvatar } from "../../Components/Welcomes/SelectAvatar/SelectAvatar";
 import { UserInfo } from "../../Components/Welcomes/UserInfo/UserInfo";
 import { Navigate } from "react-router-dom";
@@ -29,7 +29,7 @@ export const Welcome = () =>{
         
     }, []);
 
-    const checkUsernameAndAvatar = () =>{
+    const checkUsernameAndAvatar = (e) =>{
         if(currentUser && currentUserImg){
             // Go online too
             socket.connect()
@@ -50,18 +50,24 @@ export const Welcome = () =>{
                 setDisplayMessage(false)
             }, 2000);
         }
+        // Make the button clickable again
+        e.target.disabled = false
+        e.target.style.cursor = "pointer"
     }
 
-    const goOnline = async () =>{
+    const goOnline = async (e) =>{
+        // Make the button not clickable
+        e.target.disabled = true
+        e.target.style.cursor = "not-allowed"
         // Is server awake?     
         if(!isServerAwake){
             setDisplayMessage(true)
             setTimeout(() => {
                 setDisplayMessage(false)
-                checkUsernameAndAvatar()
+                checkUsernameAndAvatar(e)
             }, 2000);
         }else{
-            checkUsernameAndAvatar()
+            checkUsernameAndAvatar(e)
         }
             
     }

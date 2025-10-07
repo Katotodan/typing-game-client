@@ -1,4 +1,4 @@
-import React,{useState, useContext, useEffect} from "react";
+import {useState, useContext, useEffect} from "react";
 import { Race } from "../Components/Start/Race";
 import { RaceText } from "../Components/Start/TextRace";
 import { RandomTextIndexContext, ImageUrlContext, UserNameContext } from "../Context";
