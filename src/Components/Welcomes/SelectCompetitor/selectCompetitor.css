@@ -1,6 +1,5 @@
 .competitor-container{
-    height: 75dvh;
-    max-height: 75dvh;
+    height: 75%;
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
