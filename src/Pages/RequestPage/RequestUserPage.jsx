@@ -67,7 +67,7 @@ export const RequestUserPage = () =>{
                     isRequestSent={isRequestSent} displayWecomingMsg ={displayWecomingMsg} 
                     noCompetitorResponded = {enableAnotherRequest}/>
                 </div>
-                <SendRequest competitor={competitor} sendRequestFnc={sendRequestFnc}/>
+                {/* <SendRequest competitor={competitor} sendRequestFnc={sendRequestFnc}/> */}
             </div>
             
             {navigateUser && <Navigate to="/"/>}
