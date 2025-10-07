@@ -61,12 +61,12 @@ export const RequestUserPage = () =>{
             {showOnlineUser && <button className="search-btn" onClick={toggleOnlineUser}><X /></button>}
             
             <div className="request-page-main-container">
-                <div className="request-container">
+                {/* <div className="request-container"> */}
                     {/* <SelectCompetitor selectedCompetitor = {selectedCompetitor} display={showOnlineUser}/>
                     <Request competitor = {competitor} display={showWelcomingMsg} 
                     isRequestSent={isRequestSent} displayWecomingMsg ={displayWecomingMsg} 
                     noCompetitorResponded = {enableAnotherRequest}/> */}
-                </div>
+                {/* </div> */}
                 <SendRequest competitor={competitor} sendRequestFnc={sendRequestFnc}/>
             </div>
             
