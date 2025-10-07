@@ -1,18 +1,12 @@
 .request-page-main-container{
     width: 100%;
-    /* Use min-height with svh fallback to avoid mobile browser chrome causing extra space */
-    min-height: calc(100svh - 4rem);
-    min-height: calc(100vh - 4rem); /* fallback for browsers without svh */
-    /* include safe area inset for devices with home indicator */
-    padding-bottom: env(safe-area-inset-bottom, 0);
+    height: calc(100dvh - 4rem);
     position: relative;
     background-color: blue;
 }
 
 .request-container{
-    /* match container sizing but leave flexible for content */
-    min-height: calc(100svh - 7rem);
-    min-height: calc(100vh - 7rem);
+    height: calc(100dvh - 7rem);
 }
 .search-btn{
     position: absolute;
@@ -24,12 +18,10 @@
 }
 @media (min-width: 768px) {
     .request-page-main-container{
-        min-height: calc(100svh - 5rem);
-        min-height: calc(100vh - 5rem);
+        height: calc(100dvh - 5rem);
     } 
     .request-container{
-        min-height: calc(100svh - 8rem);
-        min-height: calc(100vh - 8rem);
+        height: calc(100dvh - 8rem);
     }
     .search-btn{
         display: none;
