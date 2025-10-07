@@ -17,7 +17,13 @@ const styles = {
         padding: "0.25rem 0.5rem",
         borderRadius: 5,
         fontSize: "1.2rem",
-        marginTop: "1rem"
+        marginTop: "1rem",
+        border: "2px solid black",
+        outline: "none",
+        "&:focus": {
+            borderColor: "#87CEEB",
+            boxShadow: "0 0 5px #87CEEB"
+        }
     },
     link:{
         textDecoration:"none",
