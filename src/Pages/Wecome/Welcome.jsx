@@ -59,7 +59,7 @@ export const Welcome = () =>{
             setTimeout(() => {
                 setDisplayMessage(false)
                 checkUsernameAndAvatar()
-            }, 1000);
+            }, 2000);
         }else{
             checkUsernameAndAvatar()
         }

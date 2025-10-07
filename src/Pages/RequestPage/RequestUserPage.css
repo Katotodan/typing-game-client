@@ -1,8 +1,8 @@
 .request-page-main-container{
     width: 100%;
     height: calc(100dvh - 4rem);
-    overflow: hidden;
     position: relative;
+    background-color: blue;
 }
 
 .request-container{
