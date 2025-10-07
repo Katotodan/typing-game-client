@@ -15,7 +15,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   background-color: red;
-  height: fit-content;
 }
 
 code {

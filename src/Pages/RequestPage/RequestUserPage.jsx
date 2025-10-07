@@ -54,7 +54,7 @@ export const RequestUserPage = () =>{
     }
 
     return(
-        <>
+        <div>
             <Navbar username={currentUser} imgUrl={currentUserImg}/>
             {/* Toggle button */}
             {showWelcomingMsg && <button className="search-btn" onClick={toggleOnlineUser}><Search/></button>}
@@ -71,7 +71,7 @@ export const RequestUserPage = () =>{
             </div> */}
             
             {navigateUser && <Navigate to="/"/>}
-        </>
+        </div>
         
     )
 }
