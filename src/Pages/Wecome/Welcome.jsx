@@ -15,6 +15,7 @@ export const Welcome = () =>{
     const {currentUser} = useContext(UserNameContext)
     const {currentUserImg} = useContext(ImageUrlContext)
     const [isServerAwake, setIsServerAwake] = useState(false);
+    const [isBtnClickable, setIsBtnClickable] = useState(true)
 
     // Wake the server up
     useEffect(() => {
@@ -51,14 +52,12 @@ export const Welcome = () =>{
             }, 2000);
         }
         // Make the button clickable again
-        e.target.disabled = false
-        e.target.style.cursor = "pointer"
+        setIsBtnClickable(true)
     }
 
     const goOnline = async (e) =>{
         // Make the button not clickable
-        e.target.disabled = true
-        e.target.style.cursor = "not-allowed"
+        setIsBtnClickable(false)
         // Is server awake?     
         if(!isServerAwake){
             setDisplayMessage(true)
@@ -95,8 +94,8 @@ export const Welcome = () =>{
             </div>
             
             
-            <button type="button" onClick={goOnline} className="goOnline-btn">
-                See online combetitors
+            <button type="button" onClick={goOnline} className="goOnline-btn" disabled={!isBtnClickable}>
+                {isBtnClickable ? 'See online combetitors' : 'Loading...'}
             </button>
             {displayOnlineUsers && <Navigate to="/request"/>}   
         </div>
